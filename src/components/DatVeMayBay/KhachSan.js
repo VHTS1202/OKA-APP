@@ -1,90 +1,140 @@
 import React from 'react';
-import { Select } from 'antd';
-import jsonp from 'fetch-jsonp';
-import querystring from 'querystring';
-import 'antd/dist/antd.css';
+import { Select, Button, List, Typography, Menu, Dropdown, message, Space,DatePicker, InputNumber,Checkbox  } from 'antd';
+import {RiHistoryFill, RiMoneyDollarCircleLine} from 'react-icons/ri'
+import {GoLocation} from 'react-icons/go'
+import { SearchOutlined } from '@ant-design/icons';
 
-
-
+const { Text } = Typography;
 const { Option } = Select;
-
-let timeout;
-let currentValue;
-
-function fetch(value, callback) {
-    if (timeout) {
-        clearTimeout(timeout);
-        timeout = null;
-    }
-    currentValue = value;
-
-    function fake() {
-        const str = querystring.encode({
-        code: 'utf-8',
-        q: value,
-        });
-        jsonp(`https://suggest.taobao.com/sug?${str}`)
-        .then(response => response.json())
-        .then(d => {
-            if (currentValue === value) {
-            const { result } = d;
-            const data = [];
-            result.forEach(r => {
-                data.push({
-                value: r[0],
-                text: r[0],
-                });
-            });
-            callback(data);
-            }
-        });
-        }
-
-        timeout = setTimeout(fake, 300);
+const { RangePicker } = DatePicker;
+function onChange1(e) {
+  console.log(`checked = ${e.target.checked}`);
 }
-class Khachsan1 extends React.Component {
-    state = {
-      data: [],
-      value: undefined,
-    };
+
+
+function handleButtonClick(e) {
+  message.info('Vui lòng chọn thành phố.');
+  console.log('click left button', e);
+}
+
+function handleMenuClick(data) {
+  message.info('đã chọn thành công.');
+  console.log('click', data);
+}
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+const data = [
+  {
+    title: 'Đà Nẵng',
+    Nation: 'Việt Nam',
+  },
+  {
+    title: 'Đà Lạt',
+    Nation: 'Việt Nam',
+  },
+  {
+    title: 'Thành Phố Vũng Tàu',
+    Nation: 'Việt Nam',
+  },
+  {
+    title: 'Nha Trang',
+    Nation: 'Việt Nam',
+  },
+  {
+    title: 'Bangkok',
+    Nation: 'Thái Lan',
+  },
+  {
+    title: 'Singapore',
+  },
+  {
+    title: 'Kuala Lumpur',
+    Nation: 'Malaysia',
+  },
+  {
+    title: 'Pattaya',
+    Nation: 'Thái Lan',
+  },
+];
+
+
+
+
+
+export default function Khachsan1() {
+
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item style={{width: '700px'}} key="1" icon={<GoLocation />}>
+      <List
+                  itemLayout="horizontal"
+                  dataSource={data}
+                  renderItem={item => (
+                    <List.Item>
+                      <List.Item.Meta
+                        
+                        title={<a href="https://www.traveloka.com/vi-vn/">{item.title}</a>}
+                        description={item.Nation}
+                      />
+                    </List.Item>
+                  )}/>
+      </Menu.Item>
+      
+    </Menu>
+  );
   
-    handleSearch = value => {
-      if (value) {
-        fetch(value, data => this.setState({ data }));
-      } else {
-        this.setState({ data: [] });
-      }
-    };
   
-    handleChange = value => {
-      this.setState({ value });
-    };
-  
-    render() {
-      const options = this.state.data.map(d => <Option key={d.value}>{d.text}</Option>);
-      return (
-        <Select
-          showSearch
-          value={this.state.value}
-          placeholder={this.props.placeholder}
-          style={this.props.style}
-          defaultActiveFirstOption={false}
-          showArrow={false}
-          filterOption={false}
-          onSearch={this.handleSearch}
-          onChange={this.handleChange}
-          notFoundContent={null}
-        >
-          {options}
-        </Select>
-      );
-    }
-  }
+  return (
+    <div>
+      <div >
+      <Button id='button1' icon={<RiHistoryFill />} type="link">
+      &ensp; Xem Khách Sạn Gần Đây
+      </Button> <br />
+      </div>
+      <div  style={{width:'300px'}}>
+      <Space>
+      <Dropdown.Button onClick={handleButtonClick} overlay={menu} id='dropdown'>
+      Thành Phố, Khách Sạn, Điểm Đến                
+      </Dropdown.Button>
+      </Space>
+      </div>
+      <div>
+      <div>
+        <br />
+          <Text strong style={{marginTop: "20px"}}>
+                Nhận Phòng
+            </Text><br />
+            <Space style={{marginTop: '10px'}} direction="vertical" size={12}>
+              <RangePicker />
+            </Space>
+        </div>
+        <br />
+        <div>
+        <Text strong style={{marginTop: "20px"}}>
+                Khách
+        </Text>
+        <Text strong style={{marginLeft: "50px"}}>
+                Phòng
+        </Text><br />
+        <InputNumber min={1} max={15} defaultValue={1} onChange={onChange} />
+        <InputNumber min={1} max={12} defaultValue={1} onChange={onChange} />
+        <Button style={{ marginLeft: '20px',backgroundColor: 'orange', width:'150px' }} type="dashed" icon={<SearchOutlined />}>
+          Search
+          </Button>
 
-
-
-  
-
-
-
-export default Khachsan1;
+        </div><br />
+        <div>
+          <Checkbox onChange={onChange1}>Tôi đi công tác</Checkbox>
+        </div>
+        <div >
+      <Button id='button1' icon={<RiMoneyDollarCircleLine />} type="link">
+                  &ensp; Thanh toán khi nhận phòng
+      </Button> <br />
+      </div>
+      </div>
+    </div>
+  )
+}

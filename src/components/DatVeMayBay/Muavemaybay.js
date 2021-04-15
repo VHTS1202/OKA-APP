@@ -1,14 +1,14 @@
 import React from 'react'
 import 'antd/dist/antd.css';
-import { Radio } from 'antd';
-import { Typography, Checkbox, DatePicker, Space, Button  } from 'antd';
+import { Typography, Checkbox, DatePicker, Space, Button , Select, Radio } from 'antd';
 import moment from 'moment';
-import { Select } from 'antd';
+
 // import {MdAirlineSeatReclineExtra} from 'react-icons/md';
 import { SearchOutlined } from '@ant-design/icons';
 import Layout from 'antd/lib/layout/layout';
 import './Muavemaybay.scss'
 import {MdAirlineSeatReclineNormal} from 'react-icons/md'
+import {FaPlaneDeparture, FaPlaneArrival} from 'react-icons/fa'
 
 
 const { Option } = Select;
@@ -72,7 +72,8 @@ const Muavebay1 = () => {
           <Text style={ {marginLeft : '60px'} } strong>Điểm Đến</Text>
           </div>
           <div>
-            <Select
+            <Select     addonBefore = {<FaPlaneArrival />}
+                        
                         showSearch
                         style={{ width: 150 }}
                         placeholder="Điểm Khởi Hành"
@@ -87,7 +88,7 @@ const Muavebay1 = () => {
                         <Option value="HAN">Hà Nội</Option>
                         <Option value="SGN">Hồ chí Minh</Option>
                         <Option value="DAD">Đà Nẵng</Option>
-        </Select>
+            </Select>
             <Select
                         showSearch
                         style={{ width: 150 }}
@@ -104,7 +105,7 @@ const Muavebay1 = () => {
                         <Option value="SGN">Hồ chí Minh</Option>
                         <Option value="DAD">Đà Nẵng</Option>
         
-        </Select>
+            </Select>
           </div>
 
 

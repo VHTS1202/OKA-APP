@@ -4,11 +4,14 @@ import './Form1.scss'
 import { Layout, Menu, Button  } from 'antd';
 import {Link} from 'react-router-dom';
 import Khachsan1 from './KhachSan';
-
-  
-import { FaPlane, FaCarAlt, FaLocationArrow, FaTrain } from 'react-icons/fa'
-import { BiBuildingHouse, BiCar } from 'react-icons/bi';
-import { FcComboChart } from 'react-icons/fc';
+import DuaDonSanBay1 from'./DuaDonSanBay'
+import plane from './img/plane.png'
+import hotel from './img/hotel.png'
+import tietkiem from './img/tietkiem.png'
+import transport from './img/transport.png'
+import experience from './img/experience.png'
+import rentcar from './img/rentcar.png'
+import jrpass from './img/jrpass.png'
 import {AiOutlineArrowRight,AiOutlineArrowLeft} from 'react-icons/ai';
 
 import Muavebay1 from './Muavemaybay';
@@ -41,10 +44,14 @@ class Form1 extends Component {
                 return this.setState({
                     layoutRight: <Muavebay1 />
                 })
-                case '5':
+                case '2':
                     return this.setState({
                         layoutRight: <Khachsan1 />
                     })
+                case '4':
+                        return this.setState({
+                            layoutRight: <DuaDonSanBay1 />
+                        })
                 default:
                     return null;
                 
@@ -64,27 +71,27 @@ class Form1 extends Component {
                         <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
                          {React.createElement(this.state.collapsed ? AiOutlineArrowRight : AiOutlineArrowLeft)}
                         </Button>
-                        <Menu theme="light" defaultSelectedKeys={['2']} mode="inline" onClick={this.clickMenu}>
-                            <Menu.Item key="1" icon={<FaPlane />}>
-                               Vé Máy Bay                   
+                        <Menu theme="gray" defaultSelectedKeys={['2']} mode="inline" onClick={this.clickMenu}>
+                            <Menu.Item key="1" >
+                            <img className="logo-items" src={plane} alt="plane" />  &emsp;&ensp;&ensp;Vé Máy Bay                   
                             </Menu.Item>
-                            <Menu.Item key="2" icon={<BiBuildingHouse />}>
-                                Khách Sạn
+                            <Menu.Item key="2">
+                            <img className="logo-items" src={hotel} alt="hotel" />  &emsp;&ensp;&ensp;  Khách Sạn
                             </Menu.Item>
-                            <Menu.Item key="3" icon={<FcComboChart />}>
-                                Combo Tiết Kiệm
+                            <Menu.Item key="3" >
+                            <img className="logo-items" src={tietkiem} alt="tietkiem" />  &emsp;&ensp;&ensp;  Combo Tiết Kiệm
                             </Menu.Item>
-                            <Menu.Item key="4" icon={<FaCarAlt />}>
-                                Đưa đón sân bay
+                            <Menu.Item key="4" >
+                            <img className="logo-items" src={transport} alt="transport" />  &emsp;&ensp;&ensp;  Đưa đón sân bay
                             </Menu.Item>
-                            <Menu.Item key="5" icon={<FaLocationArrow />}>
-                                Experience
+                            <Menu.Item key="5" >
+                            <img className="logo-items" src={experience} alt="experience" />   &emsp;&ensp;&ensp; Experience
                             </Menu.Item>
-                            <Menu.Item key="6" icon={<BiCar />}>
-                                Cho thuê xe
+                            <Menu.Item key="6">
+                            <img className="logo-items" src={rentcar} alt="rentcar" />    &emsp;&ensp;&ensp; Cho thuê xe
                             </Menu.Item>
-                            <Menu.Item key="7" icon={<FaTrain />}>
-                                JR Pass
+                            <Menu.Item key="7" >
+                            <img className="logo-items" src={jrpass} alt="jrpass" />   &emsp;&ensp;&ensp;   JR Pass
                             </Menu.Item>
                             
                         </Menu>
@@ -96,6 +103,7 @@ class Form1 extends Component {
                             <Content style={{ margin: '0 16px' }}>
                             <div>
                             {this.state.layoutRight}
+                            {/* <Khachsan1 /> */}
                             </div>
                             </Content>
                         </Layout>
