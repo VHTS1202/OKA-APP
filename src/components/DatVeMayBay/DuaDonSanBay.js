@@ -94,7 +94,7 @@ export default function DuaDonSanBay1() {
                         
          </Space>
 
-         <TimePicker style={{marginLeft: '10px',width: '125px'}} onChange={onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+         <TimePicker style={{marginLeft: '10px',width: '107px'}} onChange={onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
  
         
           </div>
