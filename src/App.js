@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+// import Header1 from './components/Header';
+// import Form1 from './components/DatVeMayBay/Form1'
 function App() {
   return (
     <div>
-      <h2>Profile KH</h2>
+        day la trang chu
     </div>
   );
 }
