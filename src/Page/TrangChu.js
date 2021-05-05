@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Form1 from '../components/DatVeMayBay/Form1';
 import NavbarMenu from '../components/Navbar/navbar-top';
 import NavbarMenu2 from '../components/Navbar/navbar-bot';
-import Body from '../components/Body/Body'
-import LowerBody from '../components/Body/Body2'
+import Body from '../components/Body/Body';
+import LowerBody from '../components/Body/Body2';
+import Footer from '../components/footer/footer';
 
 
 import 'antd/dist/antd.css';
@@ -36,8 +37,8 @@ class trangchu extends Component {
                     <Body />
                     <LowerBody />
                 </div>
+                <Footer></Footer>
             </div>
-
          );
     }
 }
