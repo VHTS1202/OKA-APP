@@ -77,6 +77,11 @@ function Footer(){
                 </Col>
                 <Col span={4}></Col>
             </Row>
+            <br></br>
+            <hr></hr>
+            <br></br>
+            <p className="text1">Công ty TNHH Traveloka Việt Nam. Mã số DN: 0313581779. Tòa nhà An Phú, 117-119 Lý Chính Thắng, P. 7, Q. 3, TPHCM</p>
+            <p className="text2">Copyright © 2021 Traveloka</p>
         </div>
     );
 }

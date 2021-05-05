@@ -9,6 +9,7 @@ function App() {
   return (
     <div>
         <trangchu></trangchu>
+        <Footer></Footer>
     </div>
   );
 }
