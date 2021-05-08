@@ -1,5 +1,6 @@
 import { Form, Input, Button } from 'antd';
-
+import axios from 'axios';
+import {Link} from 'react-router-dom'
 const layout = {
   labelCol: {
     span: 8,
@@ -36,6 +37,7 @@ const Demo = () => {
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
+      // onSubmit={}
     >
       <h4>Email hoặc số di động</h4>
       <Form.Item style={{width: '250px'}}

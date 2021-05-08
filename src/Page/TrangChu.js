@@ -7,9 +7,11 @@ import LowerBody from '../components/Body/Body2'
 
 
 import 'antd/dist/antd.css';
+import AdminLogin from '../components/Navbar/AdminLogin';
+import Footer from '../components/footer/footer';
 
 
-class trangchu extends Component {
+class Trangchu extends Component {
     state = {  }
     render() { 
         return ( 
@@ -27,7 +29,7 @@ class trangchu extends Component {
         {/* <Demo /> */}
         </div>
         </div> 
-                
+        {/* <AdminLogin /> */}
                 <div>
                     <Form1/>
                 
@@ -35,6 +37,7 @@ class trangchu extends Component {
                 <div>
                     <Body />
                     <LowerBody />
+                    <Footer />
                 </div>
             </div>
 
@@ -42,4 +45,4 @@ class trangchu extends Component {
     }
 }
  
-export default trangchu;
+export default Trangchu;
