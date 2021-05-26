@@ -1,12 +1,34 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 import axios from 'axios'
+import { setUserSession } from "../../Utils/Common";
 
 
 const LoginPage = (props) => {
 
+  
+
   const handleLogin = () => {
-    props.history.push('/Home')
+    setError(null);
+    setLoading(true);
+    axios.post("http://localhost:3001/api/user/login",{
+      Email: email,
+      Password: pass,
+    }).then(response => {
+      setLoading(false);
+      setUserSession(response.data.token, response.data.user)
+      props.history.push('/Home')
+    }).catch(error => {
+      setLoading(false);
+      if (error.response.status === 400 || error.response.status === 400){
+        setError(error.response.data.message);
+      }
+      else {
+        setError("Something went wrong !!")
+      }
+
+    })
+    
   }
   
 

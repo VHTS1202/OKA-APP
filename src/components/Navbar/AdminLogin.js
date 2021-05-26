@@ -20,7 +20,7 @@ function AdminLogin() {
   };
   const handleGetUserProfileClick = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/admin/login");
+      const response = await axios.post("http://localhost:3001/api/profiles");
       console.log(`response.data.profile`, response.data.profile);
     } catch (error) {
       console.log("error.response.data.message", error.response.data.message);
@@ -42,7 +42,7 @@ function AdminLogin() {
         <button type="submit">Login</button>
       </form>
 
-      
+      <button onClick={handleGetUserProfileClick}>Get Users Profile</button>
     </>
   );
 }
