@@ -1,0 +1,26 @@
+.Body_TCN_Left{
+    width: 280px;
+
+    a{
+        display: flex;
+        color: #696969;
+        font-size: 17px;
+        align-items: center;
+        line-height: 24px;
+        padding: 8px;
+        font-family: MuseoSans,sans-serif;
+    }
+    .active ,a:hover{
+        color: #696969;
+        background-color: rgb(243, 243, 243);
+    }
+    a:focus{
+        color: white;
+        background-color: #0770cd !important;
+    }
+    .txt_item{
+        padding-left: 10px;
+    }
+}
+
+

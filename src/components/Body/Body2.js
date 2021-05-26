@@ -408,7 +408,7 @@ function LowerBody() {
         <hr width="80%"></hr>
         <div className="wrap_content">
          
-          <h2 className="Titile">
+          <h2 className="Title">
             <span>Tại sao nên đặt chỗ với Oka?</span>
           </h2>
 

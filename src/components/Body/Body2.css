@@ -123,6 +123,6 @@
   display: flex;
   flex-direction: column;
 }
-h2{
+.App .container_app h2{
   text-align: center;
 }

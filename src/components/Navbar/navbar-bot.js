@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Menu } from 'antd';
 import 'antd/dist/antd.css';
 import './navbar-bot.css';
-import plane  from '../img/plane.png';
-import hotel  from '../img/hotel.png';
-import tietkiem  from '../img/tietkiem.png';
-import transport  from '../img/transport.png';
-import experience  from '../img/experience.png';
-import rentcar  from '../img/rentcar.png';
-import jrpass  from '../img/jrpass.png';
+import plane  from '../../Images/plane.png';
+import hotel  from '../../Images/hotel.png';
+import tietkiem  from '../../Images/tietkiem.png';
+import transport  from '../../Images/transport.png';
+import experience  from '../../Images/experience.png';
+import rentcar  from '../../Images/rentcar.png';
+import jrpass  from '../../Images/jrpass.png';
 
 
 

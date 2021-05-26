@@ -4,12 +4,13 @@ import 'antd/dist/antd.css';
 import { DownOutlined } from '@ant-design/icons';
 import Hamburger from './hamburger'
 import './navbar-top.css';
-import traveloka_logo  from '../img/traveloka_logo.png';
-import percent  from '../img/percent.png';
-import handshake  from '../img/handshake.png';
-import save  from '../img/save.png';
-import datcho  from '../img/datcho.png';
+import traveloka_logo  from '../../Images/traveloka_logo.png';
+import percent  from '../../Images/percent.png';
+import handshake  from '../../Images/handshake.png';
+import save  from '../../Images/save.png';
+import datcho  from '../../Images/datcho.png';
 import Demo from './DangNhap';
+import { GiThunderSkull } from 'react-icons/gi';
 
 const menu = (
     <Menu>
@@ -19,6 +20,7 @@ const menu = (
       
     </Menu>
   );
+
 class NavbarMenu extends Component{
     state = {
         current: 'mail',
@@ -28,8 +30,14 @@ class NavbarMenu extends Component{
         console.log('click ', e);
         this.setState({ current: e.key });
       };
+
     render(){
         const { current } = this.state;
+
+        function btnDangKy(){
+          window.location.href = '/DangKy';
+        }
+      
         return(
             
             <Menu  className="menu-1" onClick={this.onClick} selectedKeys={[current]}  mode="horizontal" >
@@ -60,7 +68,7 @@ class NavbarMenu extends Component{
                 </Dropdown>
                 </Menu.Item>
             
-                <Button classname="sign-in" type="primary">Đăng ký</Button>
+                <Button classname="sign-in" type="primary" onClick={btnDangKy}>Đăng ký</Button>
                
             </Menu>
             

@@ -5,7 +5,6 @@ import NavbarMenu2 from '../components/Navbar/navbar-bot';
 import Body from '../components/Body/Body'
 import LowerBody from '../components/Body/Body2'
 
-
 import 'antd/dist/antd.css';
 
 
