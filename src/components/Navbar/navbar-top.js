@@ -10,13 +10,14 @@ import handshake  from '../img/handshake.png';
 import save  from '../img/save.png';
 import datcho  from '../img/datcho.png';
 import Demo from './DangNhap';
-import {Link, NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import {
   FaPercent,
   FaHandshake,
   FaSave,
   FaReceipt,
 } from 'react-icons/fa';
+
 
 const menu = (
     <Menu>
@@ -63,13 +64,13 @@ class NavbarMenu extends Component{
                 </Menu.Item>
                 <Menu.Item>
                 <Dropdown overlay={menu} trigger={['click']}>
-                    <Button className="log-in" onClick={e => e.preventDefault()}>
-                    <NavLink to='/Admin'>Đăng nhập <DownOutlined /></NavLink>
-                    </Button>
+                <Button className="log-in" onClick={e => e.preventDefault()}>
+                        <>Đăng nhập <DownOutlined /></>
+                </Button>
                 </Dropdown>
                 </Menu.Item>
             
-                <Button className="sign-in" type="primary"><NavLink to='/Admin'>Đăng <br/> Ký</NavLink></Button>
+                <Button className="sign-in" type="primary"><NavLink to='/DangKy'>Đăng <br/> Ký</NavLink></Button>
                
             </Menu>
             

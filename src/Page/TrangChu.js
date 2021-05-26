@@ -7,7 +7,6 @@ import LowerBody from '../components/Body/Body2'
 
 
 import 'antd/dist/antd.css';
-import AdminLogin from '../components/Navbar/AdminLogin';
 import Footer from '../components/footer/footer';
 
 

@@ -1,6 +1,6 @@
 import { Form, Input, Button } from 'antd';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 const layout = {
   labelCol: {
     span: 8,
@@ -8,6 +8,7 @@ const layout = {
   wrapperCol: {
     span: 16,
   },
+
 };
 const tailLayout = {
   wrapperCol: {
@@ -75,7 +76,7 @@ const Demo = () => {
       <Form.Item {...tailLayout} >
         <Button type="primary" htmlType="submit" 
         style={{marginRight:'20px', marginLeft:'-40px', backgroundColor: '#f96d01',fontSize:'14px',fontWeight:'600'}}>
-          Đăng Nhập
+          <NavLink to='/DangNhap'>Đăng Nhập</NavLink>
         </Button>
       </Form.Item>
     </Form>
