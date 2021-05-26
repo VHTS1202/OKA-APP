@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, setState } from 'react';
 import { Menu, Button , Dropdown} from 'antd';
 import 'antd/dist/antd.css';
 import { DownOutlined } from '@ant-design/icons';
@@ -10,7 +10,18 @@ import handshake  from '../../Images/handshake.png';
 import save  from '../../Images/save.png';
 import datcho  from '../../Images/datcho.png';
 import Demo from './DangNhap';
+<<<<<<< HEAD
 import { GiThunderSkull } from 'react-icons/gi';
+=======
+import {NavLink} from 'react-router-dom'
+import {
+  FaPercent,
+  FaHandshake,
+  FaSave,
+  FaReceipt,
+} from 'react-icons/fa';
+
+>>>>>>> 261d63a296f41239006b129f8f02c646605efa72
 
 const menu = (
     <Menu>
@@ -21,6 +32,10 @@ const menu = (
     </Menu>
   );
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 261d63a296f41239006b129f8f02c646605efa72
 class NavbarMenu extends Component{
     state = {
         current: 'mail',
@@ -39,39 +54,43 @@ class NavbarMenu extends Component{
         }
       
         return(
-            
+            <div className="bg-1">
             <Menu  className="menu-1" onClick={this.onClick} selectedKeys={[current]}  mode="horizontal" >
                 <Hamburger /> 
                 <img className="logo" src={traveloka_logo} alt="traveloka" />
                 
                 <Menu.Item className="item-1" id="menu-items " >
-                <img className="logo-items" src={percent} alt="percent" />
+                <FaPercent className="percent logo-items" src={percent} alt="percent" />
                     Khuyến mãi
                 </Menu.Item>
                 <Menu.Item id="menu-items">
-                <img className="logo-items" src={handshake} alt="handshake" />
+                <FaHandshake className="hand logo-items" src={handshake} alt="handshake" />
                    Hợp tác với chúng tôi
                 </Menu.Item>
                 <Menu.Item id="menu-items">
-                <img className="logo-items" src={save} alt="save" />
+                <FaSave className="save logo-items" src={save} alt="save" />
                    Đã lưu
                 </Menu.Item>
                 <Menu.Item id="menu-items">
-                <img className="logo-items" src={datcho} alt="datcho" />
+                <FaReceipt className="seat logo-items" src={datcho} alt="datcho" />
                    Đặt chỗ của tôi
                 </Menu.Item>
                 <Menu.Item>
                 <Dropdown overlay={menu} trigger={['click']}>
-                    <Button className="log-in" onClick={e => e.preventDefault()}>
-                        Đăng nhập <DownOutlined />
-                    </Button>
+                <Button className="log-in" onClick={e => e.preventDefault()}>
+                        <>Đăng nhập <DownOutlined /></>
+                </Button>
                 </Dropdown>
                 </Menu.Item>
             
+<<<<<<< HEAD
                 <Button classname="sign-in" type="primary" onClick={btnDangKy}>Đăng ký</Button>
+=======
+                <Button className="sign-in" type="primary"><NavLink to='/DangKy'>Đăng <br/> Ký</NavLink></Button>
+>>>>>>> 261d63a296f41239006b129f8f02c646605efa72
                
             </Menu>
-            
+            </div>
         );
     }
 }

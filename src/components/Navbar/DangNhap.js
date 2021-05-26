@@ -1,6 +1,11 @@
 import { Form, Input, Button } from 'antd';
+<<<<<<< HEAD
 import './DangNhap.scss';
 
+=======
+import axios from 'axios';
+import {NavLink} from 'react-router-dom'
+>>>>>>> 261d63a296f41239006b129f8f02c646605efa72
 const layout = {
   labelCol: {
     span: 8,
@@ -8,6 +13,7 @@ const layout = {
   wrapperCol: {
     span: 16,
   },
+
 };
 const tailLayout = {
   wrapperCol: {
@@ -37,6 +43,7 @@ const Demo = () => {
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
+      // onSubmit={}
     >
       <h4>Email hoặc số di động</h4>
       <Form.Item style={{width: '250px'}}
@@ -74,7 +81,7 @@ const Demo = () => {
       <Form.Item {...tailLayout} >
         <Button type="primary" htmlType="submit" 
         style={{marginRight:'20px', marginLeft:'-40px', backgroundColor: '#f96d01',fontSize:'14px',fontWeight:'600'}}>
-          Đăng Nhập
+          <NavLink to='/DangNhap'>Đăng Nhập</NavLink>
         </Button>
       </Form.Item>
     </Form>

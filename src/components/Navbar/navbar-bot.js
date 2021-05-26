@@ -25,7 +25,7 @@ class NavbarMenu2 extends Component{
     render(){
         const { current } = this.state;
         return(
-           
+           <div className="bg">
             <Menu className="menu-2" onClick={this.onClick} selectedKeys={[current]}  mode="horizontal" >
                 <Menu.Item className="menu-items  " id="menu-1 item-1"   >
                 <img className="logo-items" src={plane} alt="plane" />
@@ -59,7 +59,7 @@ class NavbarMenu2 extends Component{
                     JR Pass
             </Menu.Item>
             </Menu>
-          
+            </div>
         );
     }
 }
