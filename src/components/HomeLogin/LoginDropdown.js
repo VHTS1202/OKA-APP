@@ -10,7 +10,12 @@ import {IoIosPeople} from 'react-icons/io'
 import {NavLink} from 'react-router-dom'
 import './Home2.css'
 
-export default function LoginDropdown() {
+const LoginDropdown = (props) => {
+
+  const handleLogout = () => {
+      props.history.push('/DangNhap')
+  }
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -24,7 +29,7 @@ export default function LoginDropdown() {
   return (
     <div>
       <Button className='btnUser' style={{borderRadius: '10px'}} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-      <p><BsPeopleCircle style={{color: 'rgb(7, 112, 205)'}} /> Sơn  <RiArrowDropDownLine /></p>
+      <p><BsPeopleCircle style={{color: 'rgb(7, 112, 205)'}} /> Tiến  <RiArrowDropDownLine /></p>
       </Button>
       <Menu
         id="simple-menu"
@@ -42,8 +47,9 @@ export default function LoginDropdown() {
         <MenuItem onClick={handleClose}><NavLink to='/' ><FaRegBell /> Thông báo giá vé máy bay</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to='/' ><IoIosPeople /> Passenger Quick Pick</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to='/' ><FiMail /> Khuyến mãi</NavLink></MenuItem>
-        <MenuItem onClick={handleClose}><NavLink to='/' ><RiLogoutBoxRLine /> Đăng Xuất</NavLink></MenuItem>
+        <MenuItem onClick={handleLogout}><NavLink to='/' ><RiLogoutBoxRLine /> Đăng Xuất</NavLink></MenuItem>
       </Menu>
     </div>
   );
 }
+export default LoginDropdown;

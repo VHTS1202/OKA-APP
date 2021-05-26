@@ -425,3 +425,8 @@ form {
     box-sizing: inherit;
 }
 
+._8cS79n::-webkit-outer-spin-button, ._8cS79n::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
