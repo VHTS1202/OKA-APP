@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import Form1 from '../components/DatVeMayBay/Form1';
 import NavbarMenu from '../components/Navbar/navbar-top';
 import NavbarMenu2 from '../components/Navbar/navbar-bot';
-import Body from '../components/Body/Body';
-import LowerBody from '../components/Body/Body2';
-import Footer from '../components/footer/footer';
+import Body from '../components/Body/Body'
+import LowerBody from '../components/Body/Body2'
 
 
 import 'antd/dist/antd.css';
+import Footer from '../components/footer/footer';
 
 
-class trangchu extends Component {
+class Trangchu extends Component {
     state = {  }
     render() { 
         return ( 
@@ -28,7 +28,7 @@ class trangchu extends Component {
         {/* <Demo /> */}
         </div>
         </div> 
-                
+        {/* <AdminLogin /> */}
                 <div>
                     <Form1/>
                 
@@ -36,11 +36,12 @@ class trangchu extends Component {
                 <div>
                     <Body />
                     <LowerBody />
+                    <Footer />
                 </div>
-                <Footer></Footer>
             </div>
+
          );
     }
 }
  
-export default trangchu;
+export default Trangchu;
