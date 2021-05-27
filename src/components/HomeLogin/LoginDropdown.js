@@ -24,7 +24,7 @@ export default function LoginDropdown() {
   return (
     <div>
       <Button className='btnUser' style={{borderRadius: '10px'}} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-      <p><BsPeopleCircle style={{color: 'rgb(7, 112, 205)'}} /> Sơn  <RiArrowDropDownLine /></p>
+      <p><BsPeopleCircle style={{color: 'rgb(7, 112, 205)'}} /> Tiến  <RiArrowDropDownLine /></p>
       </Button>
       <Menu
         id="simple-menu"
@@ -34,7 +34,7 @@ export default function LoginDropdown() {
         onClose={handleClose}
       >
         <label>Tài Khoản</label>
-        <MenuItem onClick={handleClose}><NavLink to='/Profile' ><FaMale /> Chỉnh Sửa Hồ Sơ</NavLink></MenuItem>
+        <MenuItem onClick={handleClose}><NavLink to='/TaiKhoan' ><FaMale /> Chỉnh Sửa Hồ Sơ</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to='/' ><FaCoins /> Điểm thưởng của tôi</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to='/' ><FaRegCreditCard /> Thẻ Của Tôi</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to='/' ><RiBillLine /> Danh sách giao dịch</NavLink></MenuItem>

@@ -1,11 +1,8 @@
 import { Form, Input, Button } from 'antd';
-<<<<<<< HEAD
 import './DangNhap.scss';
 
-=======
 import axios from 'axios';
 import {NavLink} from 'react-router-dom'
->>>>>>> 261d63a296f41239006b129f8f02c646605efa72
 const layout = {
   labelCol: {
     span: 8,

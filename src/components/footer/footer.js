@@ -1,14 +1,14 @@
 import React from 'react';
 import './footer.css';
 import 'antd/dist/antd.css';
-import Facebook from "../img/ft/facebook01.png"
-import Twitter from "../img/ft/twitter01.png"
-import Instagram from "../img/ft/instagram01.png"
-import Youtube from "../img/ft/youtube01.png"
-import registered from '../img/ft/registered.png';
-import sponsors from '../img/ft/sponsors.png';
-import GP from '../img/ft/GGP.png';
-import AS from '../img/ft/AS.png';
+import Facebook from "../../Images/ft/facebook01.png"
+import Twitter from "../../Images/ft/twitter01.png"
+import Instagram from "../../Images/ft/instagram01.png"
+import Youtube from "../../Images/ft/youtube01.png"
+import registered from '../../Images/ft/registered.png';
+import sponsors from '../../Images/ft/sponsors.png';
+import GP from '../../Images/ft/GGP.png';
+import AS from '../../Images/ft/AS.png';
 import { Row, Col } from 'antd';
 
 function Footer(){

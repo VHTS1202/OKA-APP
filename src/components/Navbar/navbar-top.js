@@ -10,10 +10,8 @@ import handshake  from '../../Images/handshake.png';
 import save  from '../../Images/save.png';
 import datcho  from '../../Images/datcho.png';
 import Demo from './DangNhap';
-<<<<<<< HEAD
 import { GiThunderSkull } from 'react-icons/gi';
-=======
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import {
   FaPercent,
   FaHandshake,
@@ -21,7 +19,6 @@ import {
   FaReceipt,
 } from 'react-icons/fa';
 
->>>>>>> 261d63a296f41239006b129f8f02c646605efa72
 
 const menu = (
     <Menu>
@@ -32,10 +29,7 @@ const menu = (
     </Menu>
   );
 
-<<<<<<< HEAD
-=======
   
->>>>>>> 261d63a296f41239006b129f8f02c646605efa72
 class NavbarMenu extends Component{
     state = {
         current: 'mail',
@@ -57,7 +51,7 @@ class NavbarMenu extends Component{
             <div className="bg-1">
             <Menu  className="menu-1" onClick={this.onClick} selectedKeys={[current]}  mode="horizontal" >
                 <Hamburger /> 
-                <img className="logo" src={traveloka_logo} alt="traveloka" />
+                <NavLink to='/'><img className="logo" src={traveloka_logo} alt="traveloka" /></NavLink>
                 
                 <Menu.Item className="item-1" id="menu-items " >
                 <FaPercent className="percent logo-items" src={percent} alt="percent" />
@@ -72,8 +66,9 @@ class NavbarMenu extends Component{
                    Đã lưu
                 </Menu.Item>
                 <Menu.Item id="menu-items">
+                <Link to="/DatChoCuaToi/TatCaSanPham"> 
                 <FaReceipt className="seat logo-items" src={datcho} alt="datcho" />
-                   Đặt chỗ của tôi
+                   Đặt chỗ của tôi</Link>
                 </Menu.Item>
                 <Menu.Item>
                 <Dropdown overlay={menu} trigger={['click']}>
@@ -83,11 +78,7 @@ class NavbarMenu extends Component{
                 </Dropdown>
                 </Menu.Item>
             
-<<<<<<< HEAD
-                <Button classname="sign-in" type="primary" onClick={btnDangKy}>Đăng ký</Button>
-=======
                 <Button className="sign-in" type="primary"><NavLink to='/DangKy'>Đăng <br/> Ký</NavLink></Button>
->>>>>>> 261d63a296f41239006b129f8f02c646605efa72
                
             </Menu>
             </div>

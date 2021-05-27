@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { FaPercent, FaHandshake, FaSave, FaReceipt } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./Bar.css";
-import traveloka_logo from "../img/traveloka_logo.png";
+import traveloka_logo from "../../Images/traveloka_logo.png";
 import Hamburger from "../Navbar/hamburger";
 import LoginDropdown from "./LoginDropdown";
 import { NavLink } from "react-router-dom";

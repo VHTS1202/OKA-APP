@@ -104,7 +104,7 @@ export default function DangKy() {
                                                             <div className="_315kk">
                                                                 <div className="_1h4cK">
                                                                     <div>
-                                                                        <input className="_2GPjs S2Fe- _3-qgg _1nWNU" placeholder="VD: 903571113" data-id="phoneInput" type="text"></input></div>
+                                                                        <input className="_2GPjs S2Fe- _3-qgg _1nWNU" placeholder="VD: 903571113" data-id="phoneInput" type="number"></input></div>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -232,7 +232,7 @@ form {
 ._1pXlI {
     width: 16px;
     height: 11px;
-    background: url(../img/save.png) no-repeat;
+    background: url(../../Images/save.png) no-repeat;
     display: inline-block;
     margin: 1px 8px 1px 3px;
 }
@@ -428,3 +428,7 @@ form {
     box-sizing: inherit;
 }
 
+._2GPjs::-webkit-outer-spin-button, ._2GPjs::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
