@@ -1,7 +1,7 @@
 .menubar{
     background-color: rgb(255, 255, 255);
     border: 1px solid;
-    margin-left: 15%;
+    margin-left: 12%;
     margin-top: 2%;
     width: 280px;
     overflow: hidden;
@@ -19,6 +19,8 @@
     border-bottom-right-radius: 6px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    clear: both;
+    
     
 }
 
