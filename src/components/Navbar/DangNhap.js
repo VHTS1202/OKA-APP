@@ -1,88 +1,78 @@
-import { Form, Input, Button } from 'antd';
-import './DangNhap.scss';
+import { Form, Input, Button } from "antd";
+import "./DangNhap.scss";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { NavLink, useHistory } from "react-router-dom";
+import { Alert } from 'antd';
 
-import axios from 'axios';
-import {NavLink} from 'react-router-dom'
-const layout = {
-  labelCol: {
-    span: 8,
-  },
-  wrapperCol: {
-    span: 16,
-  },
+let buttons;
 
-};
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16,
-  },
-};
 
-const Demo = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
 
-  return (
-    <div>
-      <h2>Đăng nhập tài khoản</h2> <br />
-    <Form
+
+function Demo ()  {
+  
     
-      {...layout}
-      name="basic"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      // onSubmit={}
-    >
-      <h4>Email hoặc số di động</h4>
-      <Form.Item style={{width: '250px'}}
-        // label="Email hoặc số di động"
-        name="username"
-        rules={[
-          {
-            required: true,
-            message: 'Hãy Nhập Email hoặc số di động!',
-          },
-        ]}
-      >
-        <Input style={{width: '220px'}} />
-      </Form.Item>
+  
+    let history = useHistory();
+    
+  
+  
+  
+  
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  
+  
 
-        <h4>Mật Khẩu</h4>
-      <Form.Item
-        // label="Password"
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-        ]}
-      >
-        <Input.Password style={{width: '220px'}} />
-      </Form.Item>
-
-      <Form.Item  name="login" valuePropName="checked" style={{float: 'right', marginLeft: '5px',fontSize:'13px'}}>
-      <p>Bạn chưa có tài khoản? <br /><a href="facebook.com">Đăng Ký</a></p>
+  const onSubmit = async (data) => {
+    try {
       
-      </Form.Item>
+      const response = await axios.post("https://oka1kh.azurewebsites.net/api/user/login", data)
+      .then(res => res.data)
+      .catch(err => err);
+      const token = response?.data?.token ;
+      localStorage.setItem('TOKEN',token)
+      console.log("response", response);
+      
 
-      <Form.Item {...tailLayout} >
-        <Button type="primary" htmlType="submit" 
-        style={{marginRight:'20px', marginLeft:'-40px', backgroundColor: '#f96d01',fontSize:'14px',fontWeight:'600'}}>
-          <NavLink to='/DangNhap'>Đăng Nhập</NavLink>
-        </Button>
-      </Form.Item>
-    </Form>
-    </div>
+      if(response.status === 'SUCCES')
+      {
+        
+          history.push("/home");
+      }
+      
+      else {
+        buttons = (
+          alert('Bạn Nhập Sai Thông Tin !!!')
+        )
+
+      }
+      
+    } catch (error) {
+      console.log("error.response.data.message", error.response.data.message);
+    }
+  };
+  
+  return (
+    <>
+    <h2>Đăng nhập vào tài khoản</h2>
+        <form method="post" onSubmit={handleSubmit(onSubmit)}>
+        <label>Nhập Email Hoặc Số Điện Thoại</label> <br />
+        <input id="txtusername" {...register("email", { required: true })} /> <br />
+        <span style={{ color: "red" }}>
+          {errors.email === "required" && "User is required"}
+        </span>
+
+        <label htmlFor="password">Password</label> <br />
+        <input type="password" {...register("pass")} /> <br />
+        <button type="submit"  onChange={{buttons}} > Đăng Nhập </button>
+      </form>
+    </>
   );
 };
 

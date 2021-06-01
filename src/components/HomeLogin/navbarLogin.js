@@ -12,6 +12,8 @@ import traveloka_logo from "../../Images/traveloka_logo.png";
 import Hamburger from "../Navbar/hamburger";
 import LoginDropdown from "./LoginDropdown";
 import { NavLink } from "react-router-dom";
+import axios from 'axios'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +28,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavbarLogin() {
+ const NavbarLogin = () => {
+  
+       
+      
   const classes = useStyles();
   const [show, setShow] = useState(false);
 
@@ -61,3 +66,4 @@ export default function NavbarLogin() {
     </div>
   );
 }
+export default NavbarLogin;
