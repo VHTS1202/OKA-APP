@@ -3,7 +3,7 @@
     border: 1px solid;
     margin-left: 12%;
     margin-top: 2%;
-    width: 280px;
+    width: 30%px;
     overflow: hidden;
     padding-bottom: 16px;
     padding-top: 16px;
@@ -22,10 +22,21 @@
     clear: both;
     
     
+    
+    
 }
 
 .form{
     background-color: #F5F5F5;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
     
 
+}
+.formright{
+    padding: 20px 10px;
+    width: 50%;
+    min-height: 500px;
+    vertical-align: top;
 }
