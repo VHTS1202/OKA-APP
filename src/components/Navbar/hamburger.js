@@ -81,15 +81,20 @@ const Hamburger = () => {
           
         
             <Menu.Item key="5">
+            <Link to='/LienHe'>
             <img className="logo-items" src={contact} alt="contact" />
-              Liên hệ chúng tôi</Menu.Item>
+              Liên hệ chúng tôi</Link>
+              </Menu.Item>
             <Menu.Item key="6">
             <img className="logo-items" src={handshake} alt="handshake" />
               Hợp tác với chúng tôi</Menu.Item>
             
               <Menu.Item key="7">
+                <Link to='/TroGiup'>
               <img className="logo-items" src={help} alt="help" />
-                Trợ giúp</Menu.Item>
+                Trợ giúp
+                </Link>
+                </Menu.Item>
               <Menu.Item key="8">
               <img className="logo-items" src={percent} alt="percent" />
                 Khuyễn mãi</Menu.Item>

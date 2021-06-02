@@ -1,14 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-.bg-1{
-    border-top: 4px solid #1ba0e2;;
+
+
+.navbar{
+    background-color: #fff;
+    color: #fff;
 }
-.menu-1{
+
+.sign-in{
+    font-weight: 700px;
     
+}
+.icons{
+    color: brown;
+}
+
+
+.menu-1{
+   margin-left: 3%;
    color:#696969;
-    width: auto;
-    text-align: center;
-    margin: auto;
    
 }
 
@@ -17,7 +27,6 @@
     font-family: MuseoSans,sans-serif;
     color:#0770CD;
     font-weight: 500;
-    
 }
 
 .logo{
@@ -43,7 +52,7 @@
 .sign-in{
   background: #0770cd;
   cursor: pointer;
-  width: 50px;
+  width: 70px;
   height: 55px;
   padding: 10px;
   border: none;
@@ -59,6 +68,7 @@
 }
 .percent{
     color: #ff6b00;
+    
 }
 .hand{
     color: #30c5f7;
@@ -71,4 +81,36 @@
 .seat{
     color:#0770cd;
     
+}
+.p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.login1{
+    z-index: -1;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  background: #f6f6f6;
+  transition: all 0.1s linear;
+}
+.login1 :hover{
+    background: #fbfbfb;
+}
+.login{
+    margin: 0px 8px;
+  color: #1ba0e2;
+  
+}
+div {
+    display: block;
+}
+p {
+    color: black;
+   padding-top: 14px;
+}
+
+.double{
+    display: flex;
 }

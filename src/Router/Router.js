@@ -19,6 +19,8 @@ import ThongBaoVeMayBay from '../components/HomeLogin/ProfileUser/ThongBaoVeMayB
 import PassengerQP from '../components/HomeLogin/ProfileUser/PassengerQP';
 import LichSuGD from '../components/HomeLogin/ProfileUser/LichSuGD';
 import DiemThuong from '../components/HomeLogin/ProfileUser/DiemThuong';
+import TroGiup from '../Page/TroGiup/TroGiup';
+import LienHe from '../Page/LienHe/LienHe';
 
 
 
@@ -41,12 +43,17 @@ const Routerapp = () => {
                                 <Route path='/DangNhap' exact component={LoginPage} />
                                 <Route path='/Home' exact component={Home2} />
                                 
-                                <Route path='/TaiKhoan' exact component={TaiKhoan} />
-                                <Route path='/Profile' exact component={TrangKhachHang} />
-                                <Route path='/ThongBaoMayBay' exact component={TaiKhoan} />
-                                <Route path='/PassengerQuickPick' exact component={PassengerQP} />
-                                <Route path='/LichSuGiaoDich' exact component={LichSuGD} />
-                                <Route path='/DiemThuong' exact component={DiemThuong} />
+                                {/* <Route path='/TaiKhoan' exact component={TaiKhoan} /> */}
+                                <Route path='/TaiKhoan'  component={TrangKhachHang} />
+                                <Switch path='/TaiKhoan/ThongBaoMayBay'  component={ThongBaoVeMayBay} />
+                                <Switch path='/TaiKhoan/PassengerQuickPick'  component={PassengerQP} />
+                                <Switch path='/TaiKhoan/LichSuGiaoDich'  component={LichSuGD} />
+                                <Switch path='/TaiKhoan/DiemThuong'  component={DiemThuong} />
+                                
+                                <Route path='/TroGiup' exact component={TroGiup} />
+                                <Route path='/LienHe' exact component={LienHe} />
+                                
+                                
                                 
 
                                 
